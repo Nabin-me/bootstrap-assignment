@@ -1,11 +1,16 @@
+
+
+
+
+
 // JavaScript to handle sidebar toggling
 document.addEventListener('DOMContentLoaded', function () {
-    const sidebar = document.querySelector('.sidebar');
-    const expandButton = document.getElementById('logo-btn');
     const sidebarLinks = document.querySelectorAll('.nav-link');
-    const mainContent = document.querySelector('.content');
+    const cards = document.querySelectorAll('.toggle-cards');
 
 
+
+    // Add active class to clicked sidebar link
     sidebarLinks.forEach(function (link) {
         link.addEventListener('click', function () {
             sidebarLinks.forEach(function (otherLink) {
@@ -18,12 +23,24 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
 
-    expandButton.addEventListener('click', function () {
-        sidebar.classList.toggle('collapsed');
-        mainContent.classList.toggle('collapsed');
-    });
+    cards.forEach(function (card) {
+        card.addEventListener('click', function () {
+            toggleActive(card);
+        });
 
-    var options = {
+    });
+    function toggleActive(card) {
+        cards.forEach(function (otherCard) {
+            otherCard.classList.remove('border-primary', 'text-primary');
+            card.querySelector('h6').classList.add('text-secondary');
+        })
+        card.classList.add('border-primary', 'text-primary');
+        card.querySelector('h6').classList.toggle('text-secondary');
+    }
+
+
+    // Render apex chart
+    const options = {
         series: [{
             name: "Today",
             data: [{
@@ -127,6 +144,11 @@ document.addEventListener('DOMContentLoaded', function () {
             min: 0,
             max: 60,
             opposite: true,
+            labels: {
+                formatter: function (val) {
+                    return Math.round(val);
+                }
+            },
         },
         stroke: {
             curve: "smooth",
@@ -157,22 +179,31 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 }
             },
+
+
         },
         legend: {
             show: true,
             position: "top",
             horizontalAlign: "right",
-
+            markers: {
+                customHTML: [
+                    function () {
+                        // wrap the rect in a svg 
+                        return '<rect x="0" y="0" width="10" height="5" rx="2" ry="2" style="fill: var(--bs-primary);"/>'
+                    },
+                    function () {
+                        return '<rect x="0" y="0" width="10" height="5" rx="2" ry="2" style="fill: var(--bs-gray-300);"/>'
+                    }
+                ],
+                width: 16,
+                height: 3,
+                offsetY: -3
+            }
         }
 
     };
-
-    var chart = new ApexCharts(document.querySelector(".chart"), options);
-
+    const chart = new ApexCharts(document.querySelector(".chart"), options);
     chart.render();
-
-
-
-
 });
 

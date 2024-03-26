@@ -1,114 +1,99 @@
 // Variable overrides
 $primary: #3751FF;
 $light: #F7F8FC;
+$dark: #363740;
 $color-gray-dark-text: #9FA2B4;
 $color-gray-dark-bg: #DDE2FF;
 $font-family-sans-serif: "Mulish", sans-serif;
 $nav-pills-link-active-bg: rgba($color-gray-dark-text, 0.08);
 $nav-link-color: #A4A6B3;
 $nav-pills-active-color: $color-gray-dark-bg;
-$nav-link-hover-color: $color-gray-dark-bg;
 $text-secondary: $color-gray-dark-text;
+$default-badge-color: #F0F1F7;
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 
-$bg-dark: #363740;
-
+// Title Style override
 .logo-title {
-    color: var(--color-gray-dark-text);
-    font-weight: bold;
     margin-right: 40px;
 }
 
+// Sidebar 
 aside {
     width: max-content !important;
-    height: 100%;
     padding: unset !important;
-    background-color: $bg-dark;
-    position: fixed;
-    // max-width: 255px !important;
     z-index: 1;
-}
 
-aside .nav-pills .nav-link {
-    border-radius: 0;
-    padding: 18px 20px;
-    position: relative;
-    color: $nav-link-color;
-    fill: $color-gray-dark-text;
-}
-
-aside .nav-pills .nav-link.active {
-    fill: $nav-pills-active-color;
-
-    svg {
-        fill: $color-gray-dark-bg !important;
+    .nav-pills .nav-link {
+        border-radius: 0;
+        padding: 18px 20px;
+        position: relative;
+        color: $nav-link-color;
+        fill: $color-gray-dark-text;
     }
 
-    &:before {
-        position: absolute;
-        display: inline-block;
-        width: 3px;
-        height: 100%;
-        left: 0;
-        top: 0;
-        content: "";
-        background-color: $color-gray-dark-bg;
+    .nav-pills .nav-link.active {
+        fill: $nav-pills-active-color;
+
+        svg {
+            fill: $color-gray-dark-bg !important;
+        }
+
+        &:before {
+            position: absolute;
+            display: inline-block;
+            width: 3px;
+            height: 100%;
+            left: 0;
+            top: 0;
+            content: "";
+            background-color: $color-gray-dark-bg;
+        }
     }
+
 }
 
-
-aside .nav-pills .nav-link.active .sidebar.collapsed span {
-    // width: max-content !important;
-    display: none !important;
-    margin-right: unset;
-}
-
+// Spacing between logo and navlinks
 #nav-links {
     margin-top: 60px;
 }
 
-
+// Avatar
 .avatar {
     width: 44px;
     height: 44px;
     object-fit: cover;
 }
 
-.content {
-    margin-left: 16.67%;
-
+// Custom Utility Classes Here
+.w-85 {
+    width: 85% !important;
 }
 
-.content.collapsed {
-    margin-left: 10%;
+.fs-xs {
+    font-size: 14px;
 }
 
-.card {
-    flex: 1;
-    max-width: 258px;
-    max-height: 134px;
+.default-status {
+    background-color: $default-badge-color !important;
+    color: $color-gray-dark-text !important;
 }
 
-.chart {
-    width: 50%;
-    height: 50%;
+.cursor-pointer {
+    cursor: pointer;
 }
 
-
-
-
-.column {
-    flex: 1;
-
-    &:last-child {
-        margin-right: 0;
+@media (min-width: 992px) {
+    .border-lg-start {
+        border-left: 1px solid $color-gray-dark-bg;
     }
 }
 
-.gap-5 {
-    gap: 40px !important;
+// bootstrap overrides
+.card {
+    max-width: 258px !important;
+    max-height: 134px !important;
 }
 
 .form-check-input.rounded-circle {

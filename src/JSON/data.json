@@ -1,0 +1,86 @@
+{
+    "user": {
+      "fullname": "Jones Ferdinand",
+      "useravatar": "assets/images/avatar.png"
+    },
+    "cards": [
+      {
+        "title": "Unresolved",
+        "count": 60
+      },
+      {
+        "title": "Overdue",
+        "count": 16
+      },
+      {
+        "title": "Open",
+        "count": 43
+      },
+      {
+        "title": "On hold",
+        "count": 64
+      }
+    ],
+    "graph": {
+      "trendstitle": "Today's trends",
+      "timestamp": "26th March 2024, 10:53AM"
+    },
+    "graph_data": [
+      {
+        "title": "Resolved",
+        "count": 449
+      },
+      {
+        "title": "Received",
+        "count": 426
+      },
+      {
+        "title": "Average first response time",
+        "value": "33m"
+      },
+      {
+        "title": "Resolution within SLA",
+        "percentage": "94%"
+      }
+    ],
+    "tickets": {
+      "unresolved": {
+        "group": "Support",
+        "categories": [
+          {
+            "category": "Waiting on Feature Request",
+            "count": 4238
+          },
+          {
+            "category": "Awaiting Customer Response",
+            "count": 1005
+          },
+          {
+            "category": "Awaiting Developer Fix",
+            "count": 914
+          },
+          {
+            "category": "Pending",
+            "count": 281
+          }
+        ]
+      }
+    },
+    "tasks": {
+      "today": [
+        {
+          "task": "Finish ticket update",
+          "status": "URGENT"
+        },
+        {
+          "task": "Create new ticket example",
+          "status": "NEW"
+        },
+        {
+          "task": "Update ticket report",
+          "status": "DEFAULT"
+        }
+      ]
+    }
+  }
+  
