@@ -39,6 +39,10 @@
         "value": "33m"
       },
       {
+        "title": "Average response time",
+        "value": "3h 8m"
+      },
+      {
         "title": "Resolution within SLA",
         "percentage": "94%"
       }

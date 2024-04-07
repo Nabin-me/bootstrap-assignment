@@ -7,8 +7,46 @@
 document.addEventListener('DOMContentLoaded', function () {
     const sidebarLinks = document.querySelectorAll('.nav-link');
     const cards = document.querySelectorAll('.toggle-cards');
+    const dataContainer = document.getElementById("dataContainer");
 
+    async function getJsonData() {
+       try{
+        const response = await fetch('data/data.json');
+        const jsonData = await response.json();
+        console.log(jsonData);
 
+        // Render the top info cards
+        jsonData.graph_data.forEach(item => {
+            const row = document.createElement("div");
+            row.classList.add("row");
+    
+            const col = document.createElement("div");
+            col.classList.add("col", "border-bottom", "p-4");
+    
+            const cardBody = document.createElement("div");
+            cardBody.classList.add("card-body", "d-flex", "flex-column", "justify-content-center", "align-items-center");
+    
+            const title = document.createElement("h6");
+            title.classList.add("card-title", "fw-bold", "text-secondary");
+            title.textContent = item.title;
+    
+            const value = document.createElement("h4");
+            value.classList.add("fw-bold");
+            value.textContent = item.count || item.value || item.percentage;
+    
+            cardBody.appendChild(title);
+            cardBody.appendChild(value);
+            col.appendChild(cardBody);
+            row.appendChild(col);
+            dataContainer.appendChild(row);
+          });
+
+       }
+         catch(err){
+              console.log('error:', err);
+         }
+    }
+   getJsonData();
 
     // Add active class to clicked sidebar link
     sidebarLinks.forEach(function (link) {
@@ -22,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     })
 
-
+    // Add active class to clicked card
     cards.forEach(function (card) {
         card.addEventListener('click', function () {
             toggleActive(card);
