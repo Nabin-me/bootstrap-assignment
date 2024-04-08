@@ -188,10 +188,12 @@
                   </svg>
                 </div>
                 <span class="text-dark"> | </span>
-                <span class="mx-2 fw-semibold d-none d-sm-inline-block">Jones Ferdinand</span>
+                <div class="d-inline-block">
+                  <span class="mx-2 fw-semibold d-none d-sm-inline-block">Jones Ferdinand</span>
 
                 <a href="#"><img src="assets/images/avatar.png" alt="profile photo of user"
                     class="rounded-circle p-1 border avatar"></a>
+                </div>
               </section>
             </div>
           </div>
@@ -244,50 +246,8 @@
       <div class="chart"></div>
     </div>
     <!-- Graph Data Area -->
-    <div class="col-lg-4 border-lg-start d-flex flex-column justify-content-center" id="dataContainer">
-      <!-- Data content here -->
-      <!-- <div class="row">
-        <div class="col border-bottom p-4 ">
-          <div class="card-body d-flex flex-column justify-content-center align-items-center">
-            <h6 class="card-title fw-bold text-secondary ">Resolved</h6>
-            <h4 class="fw-bold">449</h4>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col border-bottom p-4">
-          <div class="card-body d-flex flex-column justify-content-center align-items-center">
-            <h6 class="card-title fw-bold text-secondary ">Received</h6>
-            <h4 class="fw-bold">426</h4>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col border-bottom border-left p-4">
-          <div class="card-body d-flex flex-column justify-content-center align-items-center">
-            <h6 class="card-title fw-bold text-secondary ">Average first response time</h6>
-            <h4 class="fw-bold">33m</h4>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col border-bottom p-4">
-          <div class="card-body d-flex flex-column justify-content-center align-items-center">
-            <h6 class="card-title fw-bold text-secondary ">Resolution within SLA</h6>
-            <h4 class="fw-bold">94%</h4>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col p-4">
-          <div class="card-body d-flex flex-column justify-content-center align-items-center">
-            <h6 class="card-title fw-bold text-secondary ">Resolved</h6>
-            <h4 class="fw-bold">449</h4>
-          </div>
-        </div>
-      </div> -->
+    <div class="col-lg-4 border-lg-start d-flex flex-column justify-content-center" id="graphDataContainer">
+      <!-- Dynamic Json data will be rendered here -->
     </div>
   </section>
   <!-- Tickets and Tasks -->
@@ -410,13 +370,14 @@
   </div>
 
 
-
+  <!-- Custom scripts -->
+  <script src="js/main.js"></script> 
+  <script src="js/fetch.js"></script>
   <!-- Bootstrap JS -->
   <script src="js/bootstrap.bundle.min.js"></script>
   <!-- Apex Charts CDN -->
   <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-  <!-- Custom JS -->
-  <script src="js/main.js"></script>
+  
 </body>
 
 </html>
