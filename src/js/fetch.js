@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const graphContainer = document.getElementById("graphContainer");
   const bottomCardsContainer = document.getElementById("bottomCardsContainer");
 
-  // get json
+  // Get JSON Data and render elements
   async function getJsonData() {
     try {
       const response = await fetch("data/data.json");
@@ -24,8 +24,10 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log("error:", err);
     }
   }
+  // execute the function
   getJsonData();
 
+  // RENDER FUNCTIONS DEFINED BELOW
   function renderUserData(userData) {
     const userFullName = document.createElement("span");
     userFullName.classList.add(
@@ -244,8 +246,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "hstack",
         "px-3",
         "justify-content-between",
-        "mt-3",
-        "mb-3"
+        "my-3"
       );
 
       const categoryTitle = document.createElement("span");

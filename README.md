@@ -1,6 +1,5 @@
 <a name="readme-top"></a>
 
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -55,21 +54,16 @@ This project showcases implementation of a responsive admin panel using Bootstra
 
 - **Dynamic Data:** All the data values are fetched from a JSON to showcase the implementation of data, for example, from an API in the future.
 
-
-
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-
 - [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 - [![HTML][Html]][Html-url]
 - [![SASS][Sass]][Sass-url]
 - [![Javascript][javascript]][Js-url]
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -81,15 +75,11 @@ Follow the instructions bellow to run this project on your machine.
 
 ### Prerequisites
 
-You need  [Node Package Manager (NPM)](https://nodejs.org/en/download) to run this project.
-
-
-
+You need [Node Package Manager (NPM)](https://nodejs.org/en/download) to run this project.
 
 ### Installation
 
 _To run the project on your system follow the steps below:_
-
 
 1. Clone the repo
    ```sh
@@ -99,7 +89,7 @@ _To run the project on your system follow the steps below:_
    ```sh
    npm install
    ```
-4. Run the project
+3. Run the project
    ```sh
    npm start
    ```
@@ -110,15 +100,12 @@ _To run the project on your system follow the steps below:_
 
 ## Roadmap
 
-- [x] Start making the base project 
+- [x] Start making the base project
 - [x] Add some interactive elemets
 - [x] Add custom graph
-- [ ] Add Dynamic Data through JSON
+- [x] Add Dynamic Data through JSON
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 
 [Bootstrap.com]: https://img.shields.io/badge/-Bootstrap-563D7C?logo=bootstrap&logoColor=white&style=for-the-badge
 [Bootstrap-url]: https://getbootstrap.com
@@ -128,4 +115,3 @@ _To run the project on your system follow the steps below:_
 [Js-url]: https://www.javascript.com/
 [Sass]: https://img.shields.io/badge/-Scss-CC6699?logo=sass&logoColor=white&style=for-the-badge
 [Sass-url]: https://sass-lang.com/
-
