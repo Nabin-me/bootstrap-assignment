@@ -155,8 +155,12 @@
         </nav>
       </aside>
       <!-- Main Content Area -->
-      <main class="col-md-10 col-sm-8 offset-2 offset- py-5 w-85 pe-md-5">
+      <main class="col-md-10 col-sm-8 offset-2 offset- py-5 w-85 pe-md-5" >
         <!-- Header Area -->
+        <div class="loader" id="loader"></div>
+        <div class="contentWrapper" id="body-content">
+          
+        </div>
         <section class="row">
           <div class="col">
             <!-- Header content here -->
@@ -188,11 +192,8 @@
                   </svg>
                 </div>
                 <span class="text-dark"> | </span>
-                <div class="d-inline-block">
-                  <span class="mx-2 fw-semibold d-none d-sm-inline-block">Jones Ferdinand</span>
-
-                <a href="#"><img src="assets/images/avatar.png" alt="profile photo of user"
-                    class="rounded-circle p-1 border avatar"></a>
+                <div class="d-inline-block" id="profileDataContainer">
+                  
                 </div>
               </section>
             </div>
@@ -200,172 +201,17 @@
         </section>
 
         <!-- Cards -->
-        <section class="row mt-4 mb-4 justify-content-center align-items-center">
-          <div class="col">
-            <div class="card text-center bg-white cursor-pointer toggle-cards">
-              <div class="card-body toggle-cards" onclick="toggleActive(this)">
-                <h6 class="card-title fw-bold text-secondary ">Unresolved</h6>
-                <h1 class="fw-bold">60</h1>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card text-center bg-white cursor-pointer toggle-cards">
-              <div class=" card-body toggle-cards" onclick="toggleActive(this)">
-              <h6 class="card-title fw-bold text-secondary">Overdue</h6>
-              <h1 class="fw-bold">16</h1>
-            </div>
-          </div>
-    </div>
-    <div class="col">
-      <div class="card text-center bg-white cursor-pointer toggle-cards">
-              <div class=" card-body toggle-cards" onclick="toggleActive(this)">
-        <h6 class="card-title fw-bold text-secondary ">Open</h6>
-        <h1 class="fw-bold">43</h1>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card text-center bg-white cursor-pointer toggle-cards">
-      <div class="card-body toggle-cards" onclick="toggleActive(this)">
-        <h6 class="card-title fw-bold text-secondary ">On hold</h6>
-        <h1 class="fw-bold">64</h1>
-      </div>
-    </div>
-  </div>
+        <section class="row mt-4 mb-4 justify-content-center align-items-center" id="topCardContainer">
+          
   </section>
+
   <!-- Graph and Graph Data Area -->
-  <section class="row bg-white rounded mb-4 mw-100">
-    <!-- Graph Area -->
-    <div class="col-lg-8 px-3">
-      <!-- Graph content here -->
-      <div class="pt-4">
-        <h5 class="fw-bold">Today's trends</h5>
-        <p class="text-secondary"> as of 26th March 2024, 10:53AM</p>
-      </div>
-      <div class="chart"></div>
-    </div>
-    <!-- Graph Data Area -->
-    <div class="col-lg-4 border-lg-start d-flex flex-column justify-content-center" id="graphDataContainer">
-      <!-- Dynamic Json data will be rendered here -->
-    </div>
-  </section>
+  <section class="row bg-white rounded mb-4 mw-100" id="graphContainer"></section>
+
   <!-- Tickets and Tasks -->
-  <section class="row">
+  <section class="row" id="bottomCardsContainer"></section>
 
-    <!-- Tickets -->
-    <section class="col-md-6 mb-4">
-      <div class="pt-4 bg-white rounded border">
-        <div class="p-3">
-          <section class="hstack justify-content-between">
-            <h5 class="fw-bold">Unresolved Tickets</h5>
-            <button class="btn btn-sm text-primary p-0 fw-bold">View details</button>
-          </section>
-          <span class="text-muted fs-xs">Group: <span class="text-dark fw-semibold">Support</span></span>
-        </div>
-
-        <!-- Data rows here -->
-        <div class="hstack px-3 justify-content-between mt-3 mb-3">
-          <span class="fw-semibold text-dark">
-            Waiting on Feature Request
-          </span>
-          <span class="fw-semibold text-secondary">
-            4238
-          </span>
-        </div>
-        <hr>
-        <div class="hstack px-3 justify-content-between mt-3 mb-3">
-          <span class="fw-semibold text-dark">
-            Awaiting Customer Response
-          </span>
-          <span class="fw-semibold text-secondary">
-            1005
-          </span>
-        </div>
-        <hr>
-        <div class="hstack px-3 justify-content-between mt-3 mb-3">
-          <span class=" fw-semibold text-dark">
-            Awaiting Developer Fix
-          </span>
-          <span class=" fw-semibold text-secondary">
-            914
-          </span>
-        </div>
-        <hr>
-        <div class="hstack px-3 justify-content-between mt-3 mb-3">
-          <span class="fw-semibold text-dark">
-            Pending
-          </span>
-          <span class="fw-semibold text-secondary">
-            281
-          </span>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Tasks Todo Section -->
-    <section class="col-md-6">
-      <div class="pt-4 bg-white rounded border">
-        <div class="hstack p-3 mb-2 justify-content-between">
-          <div>
-            <h5 class="mb-1 fw-bold">Tasks</h5>
-            <span class="text-muted fs-xs">Today</span>
-          </div>
-          <button class="btn btn-sm text-primary fw-bold">View all</button>
-        </div>
-
-        <div class="hstack justify-content-between px-3 mt-3 mb-3">
-          <p class="mb-0 fw-semibold text-muted">Create new task</p>
-
-          <div class="btn p-0">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="24" height="24" rx="8" fill="#F0F1F7" />
-              <path d="M12 7V17" stroke="#9FA2B4" stroke-width="2" stroke-linecap="round" />
-              <path d="M17 12L7 12" stroke="#9FA2B4" stroke-width="2" stroke-linecap="round" />
-            </svg>
-          </div>
-
-        </div>
-
-        <hr>
-
-        <div class="hstack justify-content-between px-3 mt-3 mb-3 ">
-          <div class="form-check hstack align-items-center gap-3">
-            <input class="form-check-input rounded-circle" type="checkbox" name="flexRadioDefault"
-              id="flexRadioDefault1">
-            <label class="form-check-label fw-semibold cursor-pointer" for="flexRadioDefault1">
-              Finish ticket update
-            </label>
-          </div>
-          <div><span class="badge bg-warning text-white ">URGENT</span></div>
-        </div>
-        <hr>
-        <div class="hstack justify-content-between px-3 my-3">
-          <div class="form-check hstack align-items-center gap-3">
-            <input class="form-check-input rounded-circle" type="checkbox" name="flexRadioDefault"
-              id="flexRadioDefault2">
-            <label class="form-check-label fw-semibold cursor-pointer" for="flexRadioDefault2">
-              Create new ticket example
-            </label>
-          </div>
-          <div><span class="badge bg-success text-white">NEW</span></div>
-        </div>
-        <hr>
-        <div class="hstack justify-content-between px-3 my-3">
-          <div class="form-check d-flex align-items-center gap-3">
-            <input class="form-check-input rounded-circle" type="checkbox" name="flexRadioDefault"
-              id="flexRadioDefault3" checked>
-            <label class="form-check-label fw-semibold cursor-pointer" for="flexRadioDefault3">
-              Update ticket report
-            </label>
-          </div>
-          <span class="badge default-status">DEFAULT</span>
-        </div>
-      </div>
-    </section>
-
-  </section>
+  </main>
   </div>
   </div>
 

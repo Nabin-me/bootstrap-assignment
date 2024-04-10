@@ -11920,4 +11920,8 @@ aside .nav-pills .nav-link.active:before {
   border-radius: 50%;
 }
 
+#body-content {
+  visibility: hidden !important;
+}
+
 /*# sourceMappingURL=style.css.map */
