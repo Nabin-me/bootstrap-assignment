@@ -338,7 +338,7 @@ document.addEventListener("DOMContentLoaded", function () {
       cardContentWrapper.classList.add(
         "hstack",
         "px-3",
-        "my-3",
+        "my-2",
         "justify-content-between"
       );
 
